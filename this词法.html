@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var obj ={
+		id:'awesome',
+		cool:function coolFn(){
+			console.log(this.id);
+//			console.log(this)
+		}
+	}
+	var id = 'not awesome'
+	obj.cool();
+	setTimeout(function(){
+		obj.cool();
+		console.log(obj.cool)
+	},100)
+</script>

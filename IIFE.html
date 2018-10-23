@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var a =2 ;
+	//IIFE (Immediately Invoked Function Expression)
+	(function hhh(def){
+		def(window);
+	})(function def(global){	//将函数以变量形式传入
+		var a = 3;
+		console.log(a,global.a)
+	});
+</script>
