@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var p = new Promise((resolve,reject) =>{
+		var a = 1
+		resolve(a)
+	}).then(data =>{
+		console.log(data);
+		return ++data;
+	}).then(data =>{
+		console.log(data);
+	})
+
+</script>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+//	var myobject = {};
+//	var hhh = {};
+//	myobject[hhh] = 'bar';
+//	console.log(myobject['[object Object]'])
+//	console.log(myobject)
+
+//	function foo(){
+//		console.log(this);
+//	}
+//	
+//	var someFoo = foo;
+//	
+//	var myObject = {
+//		someFoo : foo
+//	};
+//	
+//	foo();
+//	someFoo();
+//	myObject.someFoo();//隐式绑定
+
+//	var myObject = {
+//		foo:function(){
+//			console.log(this)
+//		}
+//	}
+//	
+//	var someFoo = myObject.foo;
+//	console.log(someFoo);
+//	console.log(myObject.foo)
+	
+	//属性描述符
+//	var myobject = {
+//		
+//	};
+//	Object.defineProperty(myobject,'a',{	//配置属性
+//		value:2,
+//		writable:true,		//修改属性
+//		configurable:true,	//能否修改配置属性 
+//		enumerable:true  //枚举（用于设置特殊属性不出现在枚举中）==》for in
+//	})
+//	
+//	console.log(Object.getOwnPropertyDescriptor(myobject,'a'),myobject.a);
+	
+	//禁止拓展
+//	var myobject = {
+//		a:2
+//	};
+//	Object.preventExtensions( myobject ) //禁止拓展（）
+//	myobject.b = 3;//undefine 严格模式下抛出typeError
+
+	//密封
+//	Object.seal()//不能添加，删除属性，不能修改配置，但可以修改属性值
+
+	//冻结
+//	Object.freeze()//最高级不变性
+
+	var myobject = {
+		a:undefined
+	}
+	console.log(myobject.a);
+	console.log(myobject.b);
+</script>
