@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	
+	//for..in 遍历下标
+	var myArray = [2,3,4]
+	for (let i in myArray) {
+		console.log(i)
+	}
+	
+	for (let i of myArray) {
+		console.log(i)
+	}
+	// 数组存在iteractor迭代器
+	var it = myArray[Symbol.iterator]();
+	console.log(it.next());
+	console.log(it.next());
+	console.log(it.next());
+	console.log(it.next());
+	
+	//对象不存在iterator迭代器 需要自行定义
+	
+	var myObject = {
+		a:1,
+		b:2
+	}
+	Object.defineProperty(myObject,Symbol.iterator,{
+		enumerable:false,
+		writeable:false,
+		configurable:true,
+		value:function(){
+			var o = this;
+			console.log(o);
+			var index = 0;
+			var keys = Object.keys(o);
+			console.log(keys);
+			return {
+				next:function(){
+					return{
+						value:o[keys[index++]],
+						done:(index>keys.length)
+					};
+				}
+			};
+		}
+	})
+	
+	var Oit = myObject[Symbol.iterator]();
+	console.log(Oit.next());
+	console.log(Oit.next());
+	console.log(Oit.next());
+</script>
