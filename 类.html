@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/************************显示（伪）多态*******************************/
+	//继承 类似java机制中extend
+	function mixin( sourceObj,targetObj ){
+		for (var key in sourceObj) {
+			if(!(key in targetObj)){		//保留子类 对 父类 属性重写
+				targetObj[key] = sourceObj[key];
+			}
+		}
+		return targetObj;
+	}
+	
+	//定义交通工具对象 代替java机制交通工具类
+	var  Vehicle = {
+		engines : 1,
+		
+		ignition:function(){
+			console.log('Turning on my engine.')
+		},
+		
+		drive:function(){
+			this.ignition();
+			console.log('Steering and moving forward.')
+		}
+	}
+	
+	//定义车类
+	var car = mixin(Vehicle,{
+		wheels:4,
+		drive:function(){
+			Vehicle.drive.call(this);
+			console.log("Rolling on all "+this.wheels+' wheels!');
+		}
+	})
+	car.drive()
+
+</script>
