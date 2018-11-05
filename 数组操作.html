@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	
+	/*****************过滤&&去重********************/
+	var arr01 = [1,5,5,'dsds',4,3,8,4,7,22];
+//	var arr = ['apple','strawberry','banana','pear','apple','orange','orange','strawberry'];
+//	var r = arr01.filter(function(element,index,self){
+//		console.log(self.indexOf(element) === index);
+//   	return self.indexOf(element) === index;
+//	});
+//	console.log(r);
+	var r01 = arr01.filter((currentValue,index,arr)=>{
+		return arr.indexOf(currentValue) == index && typeof(currentValue) === 'number'
+	})
+	console.log(r01)
+	
+	/******************indexof**********************/
+	var arr = ['10','12','23','44','42','55']
+	var newArr = arr.filter(item => {
+		console.log(item.indexOf(2),item.indexOf('2'))
+		return item.indexOf('2')<0
+	})
+	console.log(newArr)
+	
+	var beasts = ['ant', 'bison', 'camel', 'duck', 'bison', 'hhh'];
+
+	
+	// start from index 2
+	console.log(beasts.indexOf('bison',-2));
+	// expected output: 4
+	
+	
+	
+	/******************map********************/
+	let arr1 = [1,2,3,5,5,3,4,9,4,15,2];
+	let arr2 = arr1.map((currentValue,index,arr)=>{
+		return currentValue+`${index}`;
+	})
+	console.log(arr2)
+	
+	/******************set********************/
+	var s = new Set();
+	arr1.map(data =>s.add(data))
+	console.log(s)
+</script>
